@@ -30,7 +30,7 @@ module "wp-asg" {
   }
 
   user_data = base64encode(
-    templatefile("${path.module}/wp-init8.sh", {
+    templatefile("${path.module}/wp-init.sh", {
       vars = {
         rds_endpoint = module.db.db_instance_endpoint
         rds_password = data.aws_secretsmanager_secret_version.secret_version.secret_string
